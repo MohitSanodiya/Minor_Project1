@@ -1,0 +1,705 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Map</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white flex justify-center  items-center min-h-screen p-4">
+  <div class="relative w-[700px] h-[600px] select-none" aria-label="Campus map layout ">
+    <div class="relative">
+
+      <!-- Ayurvedic Block -->
+      <div onclick="openDetail('ayurvedicDetail')" class="absolute top-[275px] left-[-240px] w-[120px] h-[60px] flex items-center justify-center 
+                  text-[10px] font-bold bg-[#f0e6c9] border border-black cursor-pointer 
+                  hover:bg-blue-700 hover:scale-105 transition group">
+        Ayurvedic
+
+        <!-- Tooltip -->
+        <div class="absolute top-[-20px] left-1/2 -translate-x-1/2 text-[8px] px-1 bg-white border rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition">
+          Ayurvedic Center
+        </div>
+      </div>
+
+      <!-- Ayurvedic Detail -->
+      <div id="ayurvedicDetail"
+        class="hidden absolute top-[345px] left-[-250px] w-[360px] bg-white border shadow rounded p-3 z-50 text-[11px]">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[13px]">Ayurvedic Center</h2>
+          <button onclick="closeAllDetails()" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <img src="https://your-ayurvedic-img.jpg" alt="Ayurvedic Center"
+          class="w-full h-[120px] object-cover rounded mb-2" />
+
+        <p>
+          आयुर्वेदिक केंद्र में हर्बल उपचार, योग और पारंपरिक चिकित्सा की सुविधाएँ उपलब्ध हैं।
+        </p>
+        <ul class="list-disc ml-5 mt-1">
+          <li>Herbal Therapy</li>
+          <li>Yoga Room</li>
+          <li>Natural Treatment</li>
+        </ul>
+      </div>
+
+      <!-- Management Department Block -->
+      <div onclick="openDetail('mgmtDetail')" class="absolute top-[275.5px] left-[-55px] w-[60px] h-[85px] flex items-center justify-center 
+                  text-[7px] font-bold text-center bg-[#f0e6c9] border border-black cursor-pointer 
+                  hover:bg-green-400 hover:scale-105 transition group z-[1]">
+        Management<br>Department
+
+        <!-- Tooltip -->
+        <div class="absolute top-[-20px] left-1/2 -translate-x-1/2 text-[7px] px-1 bg-white border rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition">
+          Mgmt. Dept.
+        </div>
+      </div>
+
+      <!-- Management Department Detail -->
+      <div id="mgmtDetail"
+        class="hidden absolute top-[370px] left-[-80px] w-[360px] bg-white border shadow rounded p-3 z-50 text-[11px] ">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[13px]">Management Department</h2>
+          <button onclick="closeAllDetails()" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <img src="https://your-mgmt-img.jpg" alt="Management Department"
+          class="w-full h-[120px] object-cover rounded mb-2" />
+
+        <p>
+          यह विभाग व्यवसाय, प्रबंधन और नेतृत्व में शिक्षा प्रदान करता है।
+        </p>
+        <ul class="list-disc ml-5 mt-1">
+          <li>BBA & MBA Programs</li>
+          <li>Seminar Halls</li>
+          <li>Corporate Training</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JavaScript (Only once needed in whole page) -->
+    <script>
+      function closeAllDetails() {
+        document.querySelectorAll('[id$="Detail"]').forEach(el => el.classList.add('hidden'));
+      }
+
+      function openDetail(id) {
+        closeAllDetails();
+        document.getElementById(id).classList.remove('hidden');
+      }
+    </script>
+
+    <div class="absolute top-[296px] left-[5px] w-[67px] h-[99px] bg-[#b7c99a] border border-black hover:bg-green-700 "></div>
+    <div class="relative">
+
+      <!-- Nursing Block -->
+      <div onclick="openDetail('nursingDetail')" class="absolute top-[361px] left-[-55px] w-[85px] h-[75px] bg-[#f0e6c9] border border-black 
+                  text-[10px] flex items-center text-center justify-center z-[1] 
+                  hover:bg-blue-700 hover:scale-105 transition group cursor-pointer">
+        Nursing
+
+        <!-- Tooltip -->
+        <div class="absolute top-[-20px] left-1/2 -translate-x-1/2 text-[8px] px-1 bg-white border rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition">
+          Nursing Dept.
+        </div>
+      </div>
+
+      <!-- Nursing Detail Box -->
+      <div id="nursingDetail"
+        class="hidden absolute top-[445px] left-[-90px] w-[360px] bg-white border shadow rounded p-3 z-50 text-[11px]">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[13px]">Nursing Department</h2>
+          <button onclick="closeAllDetails()" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <!-- Replace below link with your image -->
+        <img src="https://your-nursing-image.jpg" alt="Nursing Department"
+          class="w-full h-[120px] object-cover rounded mb-2" />
+
+        <p>
+          यह विभाग छात्राओं को आधुनिक चिकित्सा देखभाल और नर्सिंग ट्रेनिंग प्रदान करता है।
+          यहां प्रयोगशाला, प्रशिक्षण कक्ष, और क्लीनिकल प्रैक्टिस की सुविधा उपलब्ध है।
+        </p>
+        <ul class="list-disc ml-5 mt-1">
+          <li>Clinical Training</li>
+          <li>Modern Lab</li>
+          <li>Health Workshops</li>
+        </ul>
+        
+      </div>
+
+    </div>
+
+    <div
+      class="absolute top-[406px] left-[12px] w-[60px] h-[30px] bg-[#b7c99a] border border-black hover:bg-green-700  ">
+    </div>
+    <div class="relative">
+      <!-- NIP Block -->
+      <div onclick="openDetail('nipDetail')" class="absolute top-[436px] left-[-55px] w-[40px] h-[95px] flex items-center justify-center 
+                  text-[7px] font-bold bg-[#f0e6c9] border border-black cursor-pointer 
+                  hover:bg-blue-700 hover:scale-105 transition group">
+        NIP
+
+        <!-- Hover Tooltip -->
+        <div class="absolute top-[20px] left-[-40px] -translate-x-1/2 text-black text-[9px] px-1 bg-white border rounded shadow 
+            opacity-0 group-hover:opacity-100 transition">
+          NIP Block
+        </div>
+
+      </div>
+
+      <!-- Detail Box -->
+      <div id="nipDetail"
+        class="hidden absolute top-[540px] left-[-80px] w-[360px] bg-white border shadow rounded p-3 z-50 text-[11px]">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[13px]">NIP Block Details</h2>
+          <button onclick="closeAllDetails()" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <img src="./allNriImg/nip img.jpg" alt="NIP Block" class="w-full h-[120px] object-cover rounded mb-2" />
+
+        <p>
+          NIP (National Institute of Pharmacy) फार्मेसी एजुकेशन और रिसर्च से जुड़ा प्रमुख विभाग है।
+        </p>
+        <ul class="list-disc ml-5 mt-1">
+          <li>Pharmacy Lab</li>
+          <li>Drug Research Unit</li>
+          <li>Student Capacity: 300+</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JavaScript: One open at a time -->
+    <script>
+      function closeAllDetails() {
+        document.querySelectorAll('[id$="Detail"]').forEach(el => el.classList.add('hidden'));
+      }
+
+      function openDetail(id) {
+        closeAllDetails(); // Close any open box
+        document.getElementById(id).classList.remove('hidden'); // Open selected box
+      }
+    </script>
+
+
+    <div
+      class="absolute top-[496px] left-[-16px] w-[40px] h-[35px] bg-[#f0e6c9] border border-black text-[7px] flex items-center justify-center hover:bg-blue-700 ">
+    </div>
+    <div class="absolute top-[497px] left-[-19px] w-[40px] h-[33px] bg-[#f0e6c9] hover:bg-yellow-400 "></div>
+    <div
+      class="absolute top-[442px] left-[22px] w-[50px] h-[30px] bg-[#b7c99a] border border-black hover:bg-green-700 ">
+    </div>
+    <div
+      class="absolute top-[442px] left-[-8px] w-[25px] h-[45px] bg-[#b7c99a] border border-black hover:bg-green-700  ">
+    </div>
+
+    <div class="relative">
+      <!-- Hospital Block -->
+      <div onclick="toggleDetail('hospitalDetail')" class="absolute top-[481px] left-[24px] w-[49px] h-[50px] flex items-center justify-center 
+                  text-[10px] font-semibold bg-[#f0e6c9] border border-black cursor-pointer 
+                  hover:bg-blue-600 hover:scale-105 transition group">
+        Hospital
+
+        <!-- Hover Tooltip -->
+        <div class="absolute top-[-20px] left-1/2 -translate-x-1/2 text-[8px] px-1 bg-white border rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition">
+          Campus Hospital
+        </div>
+      </div>
+
+      <!-- Detail Box -->
+      <div id="hospitalDetail"
+        class="hidden absolute top-[550px] left-[20px] w-[360px] bg-white border shadow rounded p-3 z-50 text-[12px]">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[14px]">Campus Hospital</h2>
+          <button onclick="toggleDetail('hospitalDetail')" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <img src="https://your-hospital-image.jpg" alt="Campus Hospital"
+          class="w-full h-[130px] object-cover rounded mb-2" />
+
+        <p>
+          यह कॉलेज का प्राथमिक हॉस्पिटल है जहाँ students और staff के लिए basic medical सुविधाएं उपलब्ध हैं।
+          यहाँ एक full-time nurse, visiting doctor और emergency treatment उपलब्ध रहता है।
+        </p>
+        <ul class="list-disc ml-5 mt-1">
+          <li>24x7 First Aid</li>
+          <li>Free Consultation</li>
+          <li>Basic Medicine Supply</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Common Toggle Script -->
+    <script>
+      function toggleDetail(id) {
+        document.getElementById(id).classList.toggle('hidden');
+      }
+    </script>
+
+
+
+    <div class="relative">
+      <!-- NIPS Main Block -->
+      <div onclick="document.getElementById('nipsDetail').classList.remove('hidden')" class="absolute top-[130px] left-[145px] text-center items-center justify-center font-medium text-[10px] 
+               flex w-[65px] h-[50px] bg-[#b7c99a] border border-black hover:bg-blue-700 
+               hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <!-- Hover Title -->
+        <div class="absolute top-[-20px] left-1/2 transform -translate-x-1/2 text-[8px] bg-white px-1 border border-gray-300 rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          National Institute of Professional Studies
+        </div>
+        NIPS
+      </div>
+
+      <!-- NIPS Detail Box -->
+      <div id="nipsDetail" class="hidden absolute top-[200px] left-[100px] w-[400px] min-h-[280px] bg-white border border-gray-600 
+               shadow-lg rounded-lg p-4 z-50">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-lg font-bold">NIPS Department - Details</h2>
+          <button onclick="document.getElementById('nipsDetail').classList.add('hidden')"
+            class="text-red-600 font-bold text-lg">✕</button>
+        </div>
+
+        <!-- Department Image -->
+        <img src="https://your-nips-image-link.jpg" alt="NIPS Department"
+          class="w-full h-[140px] object-cover rounded mb-3" />
+
+        <!-- Department Info -->
+        <p class="text-[12px] leading-5">
+          NIPS (National Institute of Professional Studies) एक प्रमुख विभाग है जो practical skill-based education प्रदान
+          करता है।
+          यहाँ प्रमुख रूप से business studies, public administration, communication skills, और hospitality जैसे कोर्स
+          संचालित होते हैं।
+          NIPS छात्रों को real-world अनुभव देने के लिए industry collaboration और internship opportunities पर ज़ोर देता
+          है।
+        </p>
+
+        <ul class="text-[11px] list-disc ml-4 mt-2">
+          <li>Departments: Business Studies, Public Admin, HR & Communication</li>
+          <li>Student Capacity: 500+</li>
+          <li>Special Focus: Personality Development, Internship Programs</li>
+          <li>Events: Annual Business Conclave, Debate Competitions</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="relative">
+      <!-- TEMPLE Main Block -->
+      <div onclick="document.getElementById('templeDetail').classList.remove('hidden')" class="absolute top-[40px] left-[-20px] w-[92px] h-[40px] bg-[#f0e6c9] border border-black 
+               flex items-center justify-center text-[10px] font-bold hover:bg-yellow-400 
+               hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <!-- Hover Title -->
+        <div class="absolute top-[-20px] left-1/2 transform -translate-x-1/2 text-[8px] bg-white px-1 border border-gray-300 rounded shadow 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          Bala Ji Temple
+        </div>
+        TEMPLE
+      </div>
+
+      <!-- Temple Detail Box -->
+      <div id="templeDetail" class="hidden absolute top-[100px] left-[20px] w-[400px] min-h-[300px] bg-white border border-gray-600 
+               shadow-lg rounded-lg p-4 z-50">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-lg font-bold">Bala Ji Temple - Details</h2>
+          <button onclick="document.getElementById('templeDetail').classList.add('hidden')"
+            class="text-red-600 font-bold text-lg">✕</button>
+        </div>
+
+        <!-- Temple Image -->
+        <img src="./nri temple.jpg" alt="Bala Ji Temple" class="w-[100%] h-[150px] object-cover rounded mb-3" />
+
+        <!-- Temple History -->
+        <p class="text-[12px] leading-5">
+          यह मंदिर भगवान बालाजी (विष्णु) को समर्पित है और कॉलेज परिसर के उत्तर-पूर्व दिशा में स्थित है।
+          यह सभी छात्रों, शिक्षकों और स्टाफ के लिए आस्था और शांति का केंद्र है।
+          हर शुक्रवार को विशेष पूजा का आयोजन होता है जिसमें विद्यार्थी बड़ी संख्या में भाग लेते हैं।
+          मंदिर का वातावरण अत्यंत शांत और सकारात्मक ऊर्जा से भरा होता है।
+        </p>
+      </div>
+    </div>
+
+
+
+    <div
+      class="absolute top-[80px] left-[-20] w-[40px] h-[80px] bg-[#b7c99a] border border-black flex justify-center items-center text-center font-medium text-[8px] hover:bg-green-500">
+      kabaddi
+      Ground</div>
+    <div
+      class="absolute top-[88px] left-[30px] w-[42px] h-[72px] bg-[#b7c99a] border border-black flex items-center text-center  text-[8px] font-medium hover:bg-green-500 ">
+      football ground</div>
+    <div
+      class="absolute top-[160px] left-[-20] w-[92px] h-[40px] bg-[#7a7f7a] border border-black flex items-center justify-center text-[10px] font-bold hover:bg-zinc-700">
+    </div>
+    <div
+      class="absolute top-[200px] left-[-20] w-[92px] h-[30px] bg-[#b7c99a] rounded-br-[70px] border border-black hover:bg-green-500">
+    </div>
+    <div
+      class="absolute top-[245px] left-[-6] w-[78px] h-[45px] bg-[#b7c99a] rounded-tl-[20px]  rounded-tr-[10px] border border-black hover:bg-green-700">
+    </div>
+
+
+
+
+
+
+    <div class="w-1  absolute top-[210px] left-[207.5px]    ">|</div>
+    <div class="w-1  absolute top-[210px] left-[207.5px]    ">|</div>
+    <div class="w-[1px] h-[271px] bg-black  absolute top-[530px] left-[72px]    "></div>
+
+    <div class="  absolute top-[779px] left-[72px]    "></div>
+
+    <div class=" absolute top-[244px] left-[207.5px] "></div>
+
+    <div class=" absolute top-[512px] left-[234px]     ">|</div>
+    <div class=" absolute top-[716px] left-[234.5px]     ">|</div>
+    <div class="    absolute top-[24] left-[72] "></div>
+    <div
+      class="absolute top-[229.2px] left-[-175px] w-[160px] h-[46px] bg-[#ffffff] border border-black rounded-tl-[20px] ">
+    </div>
+    <div
+      class="absolute top-[250px] left-[-155px] w-[140px] h-[25px] bg-[#ffffff] border border-black rounded-tl-[10px] ">
+    </div>
+    <div class="absolute top-[230px] left-[-50px] w-[40px] h-[20px] bg-[#ffffff] border border-white"></div>
+    <div class="absolute top-[260px] left-[-154px] w-[137px] h-[15px] bg-[#ffffff] border border-white"></div>
+
+
+
+    <div
+      class="absolute top-[30px] left-[120px] w-[90px] h-[60px] bg-[#7a7f7a] border border-black flex items-center justify-center text-[10px] font-bold text-white hover:bg-blue-700">
+      PARKING</div>
+    <div
+      class="absolute top-[85px] left-[120px] w-[90px] h-[45px] bg-[#b7bdb7] border border-black flex items-center justify-center text-[10px] font-semibold hover:bg-green-400">
+      basket ball</div>
+
+
+    <div
+      class="absolute top-[180px] left-[120px] w-[90px] h-[40px] bg-[#b7c99a] border border-black hover:bg-green-700">
+    </div>
+    <div
+      class="absolute top-[225px] left-[120px] w-[90px] h-[40px] bg-[#b7c99a] border border-black hover:bg-green-700">
+    </div>
+
+
+    <div
+      class="absolute top-[215px] left-[250px] w-[40px] h-[50px] bg-[#4a4a4a] border border-black flex items-center justify-center text-[6px] font-semibold text-white hover:bg-blue-700">
+      Tea hall</div>
+    <div
+      class="absolute top-[215px] left-[295px] w-[40px] h-[50px] bg-[#b7c99a] border border-black flex items-center justify-center text-center text-[6px] font-semibold hover:bg-blue-700">
+      Scholarship Department</div>
+    <div
+      class="absolute top-[215px] left-[340px] w-[40px] h-[50px] bg-[#7a7f7a] border border-black flex items-center justify-center text-[6px] font-semibold text-white hover:bg-blue-700">
+      Canteen</div>
+    <div class="h-[106px] w-[50px] border rounded-tr-[50px] border-black  absolute top-[264px] left-[400px]"></div>
+    <div class="h-[104px] w-[48px] border rounded-tr-[50px] border-none bg-white absolute top-[266px] left-[400px]">
+    </div>
+
+
+
+
+    <div class="relative">
+      <!-- NIIST Main Block -->
+      <div onclick="document.getElementById('niistDetail').classList.remove('hidden')" class="absolute top-[300px] left-[120px] w-[280px] h-[70px] bg-[#f0e6c9] border border-black rounded-tr-[40px]
+               flex flex-col items-center justify-center text-[10px] font-semibold text-center 
+               hover:bg-zinc-400 hover:scale-125 transition-all duration-300 group cursor-pointer">
+        <!-- Hover Title -->
+        <div class="text-[8px] mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          National Institute of Innovation in Science & Technology
+        </div>
+        <!-- Main Label -->
+        NIIST
+      </div>
+
+      <!-- NIIST Detail Box -->
+      <div id="niistDetail" class="hidden absolute top-[400px] left-[100px] w-[450px] h-[320px] bg-white border border-gray-600 shadow-lg 
+               rounded-lg p-4 z-50 overflow-auto">
+        <img src="./allNriImg/niist.jpeg" alt="NIIIST Department"
+          class="w-full h-[140px] object-cover rounded mb-3" />
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-lg font-bold">NIIST - Detailed Information</h2>
+          <button onclick="document.getElementById('niistDetail').classList.add('hidden')"
+            class="text-red-600 font-bold text-lg">✕</button>
+        </div>
+
+        <ul class="text-sm leading-6 space-y-1">
+          <li><strong>Number of Buildings:</strong> 5 major blocks (Admin, Research, Labs, Innovation Hub, Library)</li>
+          <li><strong>Total Departments:</strong> 10 (including Physics, Chemistry, AI, Data Science, BioTech)</li>
+          <li><strong>Staff:</strong> 80+ faculty and 20+ administrative staff</li>
+          <li><strong>Student Capacity:</strong> 2000+</li>
+          <li><strong>Facilities:</strong>
+            <ul class="list-disc list-inside ml-4">
+              <li>State-of-the-art laboratories</li>
+              <li>Smart classrooms</li>
+              <li>Digital library with 5000+ e-books</li>
+              <li>24x7 Wi-Fi Campus</li>
+              <li>Startup Incubation Center</li>
+            </ul>
+          </li>
+          <li><strong>Recent Achievements:</strong>
+            <ul class="list-disc list-inside ml-4">
+              <li>Ranked among top 20 innovation colleges in India</li>
+              <li>AI-based Health Monitoring System patent approved</li>
+              <li>Won National Robotics Challenge 2024</li>
+            </ul>
+          </li>
+          <li><strong>Placement Partners:</strong> TCS, Infosys, DRDO, ISRO, Siemens</li>
+        </ul>
+      </div>
+    </div>
+
+
+    ->
+    <div class="relative">
+      <!-- Electrical Department Block -->
+      <div onclick="document.getElementById('electricalDetail').classList.remove('hidden')" class="absolute top-[370px] left-[120px] w-[85px] h-[150px] bg-[#f0e6c9] border border-black 
+           flex flex-col items-center justify-center text-[8px] font-bold text-center 
+           hover:bg-green-400 hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <div class="text-[7px] mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Electrical Engineering Block
+        </div>
+        Electrical<br>Department
+      </div>
+
+      <!-- Mechanical Department Block -->
+      <div onclick="document.getElementById('mechDetail').classList.remove('hidden')" class="absolute top-[398px] left-[235px] w-[80px] h-[120px] bg-[#f0e6c9] border border-black 
+           flex flex-col items-center justify-center text-[8px] font-semibold text-center 
+           hover:bg-green-400 hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <div class="text-[7px] mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Mechanical Block
+        </div>
+        Mechanical<br>Department
+      </div>
+
+      <!-- Law Department Block -->
+      <div onclick="document.getElementById('lawDetail').classList.remove('hidden')" class="absolute top-[398px] left-[315px] w-[80px] h-[120px] bg-[#f0e6c9] border border-black 
+           flex flex-col items-center justify-center text-[8px] font-semibold text-center 
+           hover:bg-green-400 hover:scale-105 transition-all duration-300 group cursor-pointer">
+           
+        <div class="text-[7px] mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          
+          Law Block
+        </div>
+        Law<br>Department
+      </div>
+
+      <!-- Electrical Department Detail Box -->
+      <div id="electricalDetail" class="hidden absolute top-[550px] left-[100px] w-[320px] h-[250px] bg-white border border-gray-600 shadow-lg 
+           rounded-lg p-4 z-50">
+           <img src="https://your-nips-image-link.jpg" alt="NIPS Department" class="w-full h-[140px] object-cover rounded mb-3" />
+
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm font-bold">Electrical Department</h2>
+          <button onclick="document.getElementById('electricalDetail').classList.add('hidden')"
+            class="text-red-600 font-bold">✕</button>
+        </div>
+        <ul class="text-xs leading-5">
+          <li><strong>Labs:</strong> 4</li>
+          <li><strong>Faculty:</strong> 15+</li>
+          <li><strong>Workshop:</strong> Available</li>
+          <li><strong>Projects:</strong> Ongoing</li>
+        </ul>
+      </div>
+
+      <!-- Mechanical Department Detail Box -->
+      <div id="mechDetail" class="hidden absolute top-[550px] left-[230px] w-[320px] h-[250px] bg-white border border-gray-600 shadow-lg 
+           rounded-lg p-4 z-50">
+           <img src="https://your-nips-image-link.jpg" alt="NIPS Department" class="w-full h-[140px] object-cover rounded mb-3" />
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm font-bold">Mechanical Department</h2>
+          <button onclick="document.getElementById('mechDetail').classList.add('hidden')"
+            class="text-red-600 font-bold">✕</button>
+        </div>
+        <ul class="text-xs leading-5">
+          <li><strong>Labs:</strong> 6</li>
+          <li><strong>Faculty:</strong> 12+</li>
+          <li><strong>CAD Lab:</strong> Yes</li>
+          <li><strong>Internships:</strong> Industry linked</li>
+        </ul>
+      </div>
+
+      <!-- Law Department Detail Box -->
+      <div id="lawDetail" class="hidden absolute top-[550px] left-[360px] w-[320px] h-[250px] bg-white border border-gray-600 shadow-lg 
+           rounded-lg p-4 z-50">
+           <img src="https://your-nips-image-link.jpg" alt="NIPS Department" class="w-full h-[140px] object-cover rounded mb-3" />
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm font-bold">Law Department</h2>
+          <button onclick="document.getElementById('lawDetail').classList.add('hidden')"
+            class="text-red-600 font-bold">✕</button>
+        </div>
+        <ul class="text-xs leading-5">
+          <li><strong>Classrooms:</strong> 8</li>
+          <li><strong>Faculty:</strong> 10+</li>
+          <li><strong>Moot Court:</strong> Available</li>
+          <li><strong>Library:</strong> Law Books Section</li>
+        </ul>
+        
+      </div>
+    </div>
+
+
+
+
+    <div
+      class="absolute top-[534px] left-[120px] w-[117px] h-[190px] bg-[#d1d1d1] border border-black flex items-center justify-center text-[10px] font-bold text-center hover:bg-green-400">
+      Cricket Ground</div>
+
+    <div class="relative">
+
+      <!-- HOSTEL Main Block -->
+      <div onclick="openDetail('hostelDetail')" class="absolute top-[730px] left-[97px] w-[140px] h-[70px] bg-[#f0e6c9] border border-black 
+                  flex items-center justify-center text-[10px] font-bold text-center hover:bg-yellow-600 
+                  hover:scale-105 transition-all duration-300 group cursor-pointer rounded">
+
+        HOSTEL
+
+        <!-- Tooltip -->
+        <div class="absolute top-[-22px] left-1/2 -translate-x-1/2 bg-white text-black text-[8px] px-2 py-[2px] 
+                    border border-gray-400 rounded shadow-lg opacity-0 group-hover:opacity-100 
+                    transition-opacity duration-300 whitespace-nowrap">
+          Boys & Girls Hostel
+        </div>
+      </div>
+
+      <!-- HOSTEL Detail Box -->
+      <div id="hostelDetail"
+        class="hidden absolute top-[550px] left-[-310px] w-[380px] bg-white border shadow rounded p-3 z-50 text-[11px]">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="font-bold text-[13px]">Hostel Facilities</h2>
+          <button onclick="closeAllDetails()" class="text-red-600 font-bold">✕</button>
+        </div>
+
+        <!-- Hostel Image -->
+        <img src="https://your-hostel-image.jpg" alt="Hostel" class="w-full h-[120px] object-cover rounded mb-2" />
+
+        <p>कॉलेज में लड़कों और लड़कियों दोनों के लिए अलग-अलग हॉस्टल की सुविधा उपलब्ध है। सुरक्षित वातावरण, अच्छा भोजन,
+          वाई-फाई और अध्ययन कक्ष जैसी सुविधाएँ हैं।</p>
+
+        <ul class="list-disc ml-5 mt-2">
+          <li>24x7 Security</li>
+          <li>Mess Facility</li>
+          <li>Wi-Fi Enabled</li>
+          <li>Common Room & Study Room</li>
+          <li>Hot Water & Laundry</li>
+          <li>Recreational Activities</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class=" rotate-[-45deg] absolute top-[361px] left-[470px] w-[1px] h-[60px] border border-black "></div>
+    <div class=" rotate-[90deg] absolute top-[379px] left-[410px] w-[1px] h-[40px] border border-[#0f141e] "></div>
+    <div class=" rotate-[-45deg] absolute top-[390px] left-[450px] w-[1px] h-[60px] border border-black "></div>
+    <div class="  absolute top-[410px] left-[760px] w-[1px] h-[250px] border border-black "></div>
+    <div class="  absolute top-[441px] left-[470px] w-[1px] h-[220px] border border-black "></div>
+    <div class="  absolute top-[390px] left-[490px]  ">_</div>
+    <div class="  absolute top-[640px] left-[470px]  ">_</div>
+
+
+
+    <div class="relative">
+      <!-- NIPS Main Block -->
+      <div onclick="document.getElementById('nipsDetail').classList.remove('hidden')" class="absolute top-[420px] left-[550px] w-[210px] h-[50px] bg-[#f0e6c9] border border-black rounded-l-[20px] 
+               text-center font-bold flex flex-col items-center justify-center 
+               hover:bg-yellow-300 hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <!-- Hover Text (Full Name) inside block -->
+        <div class="text-[10px] text-black mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          National Institute of Polytechnic Studies
+        </div>
+        <!-- Main Label -->
+        <div class="text-[14px]">NIPS</div>
+      </div>
+
+      <!-- NIPS Detail Box on Click -->
+      <div id="nipsDetail" class="hidden absolute top-[500px] left-[450px] w-[400px] h-[300px] bg-white border border-gray-600 shadow-lg 
+               rounded-lg p-4 z-50 overflow-auto">
+               
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-bold">NIPS - Details</h2>
+          <button onclick="document.getElementById('nipsDetail').classList.add('hidden')"
+            class="text-red-600 font-bold text-lg">
+            ✕
+          </button>
+        </div>
+        <ul class="text-sm leading-6">
+          <li><strong>Number of Buildings:</strong> 10</li>
+          <li><strong>Departments:</strong> 6</li>
+          <li><strong>Admin Offices:</strong> 2</li>
+          <li><strong>Library:</strong> Available</li>
+          <li><strong>Canteen:</strong> Yes</li>
+          <li><strong>Hostel:</strong> Boys only</li>
+          <li><strong>Wi-Fi:</strong> Available</li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div
+      class="absolute top-[500px] left-[560px] w-[200px] h-[80px] bg-[#c6d3ac] border border-black text-center hover:bg-green-700">
+      Play Ground</div>
+
+
+    <div class="relative">
+      <!-- Main Box -->
+      <div class="absolute top-[550px] left-[531px] w-[230px] h-[80px] bg-[#f0e6c9] border border-black text-center font-bold flex flex-col items-center justify-center 
+               hover:bg-yellow-400 hover:scale-105 transition-transform duration-300 group rounded cursor-pointer"
+        onclick="document.getElementById('nirtDetail').classList.remove('hidden')">
+        <!-- Hover Title Inside Box -->
+        <div class="text-[10px] text-black mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          National Institute of Research & Technology
+        </div>
+        <!-- Main Text -->
+        <div class="text-[16px]">NIRT</div>
+      </div>
+
+      <!-- Click Detail Panel -->
+      <div id="nirtDetail"
+        class="hidden absolute button-[650px] left-[450px] w-[400px] h-[380px] bg-white border border-gray-600 shadow-lg rounded-lg p-4 z-50 overflow-auto">
+        <img src="https://your-nips-image-link.jpg" alt="NIPS Department" class="w-full h-[140px] object-cover rounded mb-3" />
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-bold">NIRT - Details</h2>
+          <button onclick="document.getElementById('nirtDetail').classList.add('hidden')"
+            class="text-red-600 font-bold text-lg">
+            ✕
+          </button>
+        </div>
+        <ul class="text-sm leading-6">
+          <li><strong>Number of Buildings:</strong> 12</li>
+          <li><strong>Departments:</strong> 8</li>
+          <li><strong>Administrative Offices:</strong> 3</li>
+          <li><strong>Library:</strong> Available</li>
+          <li><strong>Cafeteria:</strong> Yes</li>
+          <li><strong>Hostel:</strong> Separate for boys and girls</li>
+          <li><strong>Wi-Fi:</strong> Campus-wide Wi-Fi</li>
+        </ul>
+        <ul class="text-sm leading-6">
+          <li><strong>Number of Buildings:</strong> 12</li>
+          <li><strong>Departments:</strong> 8</li>
+          <li><strong>Administrative Offices:</strong> 3</li>
+          <li><strong>Library:</strong> Available</li>
+          <li><strong>Cafeteria:</strong> Yes</li>
+          <li><strong>Hostel:</strong> Separate for boys and girls</li>
+          <li><strong>Wi-Fi:</strong> Campus-wide Wi-Fi</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

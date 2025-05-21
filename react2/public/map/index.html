@@ -1,0 +1,243 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Map</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<div style="background-image: url('./bg3.png'); background-size: cover  blur-3xl" class="bg-white flex justify-center   min-h-screen p-4">
+
+  <div id="mapContainer" class="relative w-[700px] h-[800px] ml-[160px] select-none" aria-label="Campus map layout">
+    <!-- ++++++++++++++++++++++++++++++ -->
+    <div class="h-[490px] w-[92px] bg-[#4d4535] absolute top-[40px] left-[-20px]">  </div>
+    <!-- +++++++++++++++++++++ -->
+    <div class="absolute top-[5px] rounded-tr-[20px] left-[-545px] w-[755px] h-[35px] bg-[#57574b]"></div>
+
+    <div class="absolute top-[39] left-[72] w-12 h-1 bg-[#494841] "> </div>
+
+    <div data-img="./clg-temple.jpeg" data-info="NRI Balaji Temple Bhopal" id="div-contain"  id="temple-div" style="background-image: url('/public/map/building.png'); background-size: cover" 
+    class="temple-div absolute top-[38px] left-[-20] w-[92px] h-[40px] bg-[#f0e6c9]  shadow-custom-niist z-[3] border-2 border-[#ffeccb]   flex items-center justify-center text-[10px] font-bold">
+     TEMPLE</div>
+    
+     <!-- <img src="./NIIST_Building_Img.jpeg" alt=""> -->
+
+
+
+    <div id="div-contain" data-img="./NIRT-P.jpeg" data-info="This is clg kabaddi ground" class="absolute top-[80px] left-[-20] w-[40px] h-[80px] bg-[#b7c99a] border border-black flex justify-center items-center text-center font-medium text-[8px]">
+      kabaddi
+      Ground</div>
+
+    <div id="div-contain" data-img="./cricket ground.jpeg" data-info="It is FootBall Ground Of NRI Collage" class="absolute top-[88px] left-[30px] w-[42px] h-[72px] bg-[#b7c99a] border border-black flex items-center text-center  text-[8px] font-medium ">
+      football ground</div>
+
+    <div class="absolute top-[160px] left-[-20] w-[92px] h-[40px] bg-[#7a7f7a] border border-black flex items-center justify-center text-[10px] font-bold">
+    </div>
+
+    <!-- ============ -->
+    <div class="absolute top-[200px] left-[-20] w-[92px] h-[30px] bg-[#b7c99a] rounded-br-[70px] border border-black ">
+    </div>
+
+    <!-- part2 -->
+
+    <div id="div-contain" data-img="./Ayurvedic-building.jpeg" data-info="This Is Ayurvadic Building of NRI" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute shadow-custom-niist top-[273px] z-[3] left-[-240] w-[120px] h-[60px] bg-[#f0e6c9]  border-4 border-[#ffeccb] flex items-center justify-center text-[10px] font-bold">
+      Ayurvadic</div>
+
+    <div
+      class="absolute top-[245px] z-[1] left-[-6] w-[78px] h-[45px] bg-[#b7c99a] rounded-tl-[20px]  rounded-tr-[10px] border border-black ">
+    </div>
+
+    <div id="div-contain"  data-img="./niist-img.jpeg"  data-info="It's Management Department" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class=" absolute top-[274px] left-[-55px] w-[63px] h-[85px] bg-[#f0e6c9]  border-4 border-[#ffeccb] shadow-custom-niist text-[8px] flex items-center font-bold text-center  z-[3] justify-center">
+      Management Department</div>
+
+    <div class="absolute top-[296px] left-[5px] w-[67px] h-[99px] bg-[#b7c99a] border border-black  z-[1]"></div>
+
+    <div id="div-contain" data-img="./nurshing-building.jpeg" data-info="This Is Nursing Department" class="absolute top-[355px] border-clay-100 left-[-55px] w-[85px] h-[81px] bg-[#f0e6c9]  shadow-custom-niist  border-4 border-[#ffeccb] text-[8px] font-bold flex items-center text-center  z-[3] justify-center">
+      Nursing</div>
+
+    <div class="absolute top-[406px] left-[12px] w-[60px] h-[30px] bg-[#b7c99a] border border-black "></div>
+    <div id="div-contain" data-img="./nip-building1.jpeg" data-info="NIP" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute shadow-custom-niist border-4 border-[#ffeccb] top-[433px] left-[-55px] w-[40px] h-[98px]  text-[7px] flex items-center justify-center z-[3] font-bold">
+      Nip</div>
+
+    <div style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute top-[496px] left-[-16px] w-[40px] h-[35px] bg-[#f0e6c9]  text-[7px] flex items-center justify-center shadow-custom-hospital border-4 border-[#ffeccb]  z-[3]">
+    </div>
+    <!-- <div style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute bg-[#ffff] top-[500px] left-[-50px] w-[65px] h-[26px] z-[4]  "></div> -->
+    <div class="absolute top-[442px] left-[22px] w-[50px] h-[30px] bg-[#b7c99a] border border-black "></div>
+    <div class="absolute top-[442px] left-[-8px] w-[25px] h-[45px] bg-[#b7c99a] border border-black "></div>
+
+    <div id="div-contain"  data-img="./nurshing-building.jpeg" data-info="Hospital of NRI Collage" style="background-image: url('/public/map/building2.png'); background-size: cover"
+      class=" border-4 border-[#ffeccb] absolute top-[481px] left-[24px] w-[49px] h-[50px] z-[3] shadow-custom-tea bg-[#f0e6c9] text-[7px] flex items-center justify-center">
+      Hospital</div>
+
+    <div class="w-1  absolute top-[210px] left-[207.5px]">|</div>
+    <div class="w-1  absolute top-[210px] left-[207.5px]">|</div>
+    <div class="w-[1px] h-[271px] bg-red-600  absolute top-[530px] left-[72px]    "></div>
+
+    <div class="absolute bg-red-600 top-[779px] left-[72px]">____</div>
+
+    <div class="absolute top-[244px]  left-[207.5px]">______________________________</div>
+
+    <div class=" absolute top-[512px] left-[234px]">|</div>
+    <div class=" absolute top-[716px] left-[234.5px]">|</div>
+    <!-- +++++++++++++++++++ -->
+    <div class="absolute top-[229.2px] left-[-175px] w-[160px] h-[46px] bg-[#4d4535] border border-black rounded-tl-[20px] ">
+    </div>
+    <div class="absolute top-[250px] left-[-155px] w-[140px] h-[25px] bg-[#607a2e] border border-black rounded-tl-[10px] ">
+    </div>
+    <!-- +++++++++++++++++ -->
+    <div class="absolute top-[230px] left-[-50px] w-[40px] h-[20px] bg-[#4d4535] "></div>
+    <div class="absolute top-[260px] left-[-154px] w-[137px] h-[20px] bg-[#607a2e] "></div>
+
+    <!-- ++++++++++++++++++++++++++ -->
+    <div class="w-[162px] h-[760px] absolute top-[42px]  left-[72px] bg-[#4d4535]"> </div>
+    <!-- +++++++++++++++++++ -->
+    <div class="w-[280px] h-[28px] absolute top-[370px]  left-[172px] bg-[#4d4535]"> </div>
+
+    <div class="w-[30px] h-[300px] absolute top-[42px]  left-[210px] bg-[#607a2e]"> </div>
+
+
+    <div id="div-contain" data-img="./cricket ground.jpeg" data-info="This Is Parking Area Of NRI" class="absolute top-[28px] left-[120px] w-[90px] h-[60px] bg-[#7a7f7a] border border-black flex items-center justify-center text-[10px] font-bold text-white">
+      PARKING</div>
+
+    <div id="div-contain"  data-img="./cricket ground.jpeg" data-info="This Ground Is For Palying Basket Ball" class="absolute top-[83px] left-[120px] w-[90px] h-[45px] bg-[#b7bdb7] border border-black flex items-center justify-center text-[10px] font-semibold">
+      basket ball</div>
+
+    <div id="div-contain" data-img="./nip-building1.jpeg" data-info="This Building Is NIPS" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute shadow-custom-hostal  top-[128px] left-[145px] text-center items-center justify-center z-[3] font-[700] text-[12px] flex w-[65px] h-[50px] bg-[#b7c99a] border-[3px] border-[#ffeccb] ">
+      NIPS</div>
+
+
+    <div class="absolute top-[180px] left-[120px] w-[90px] h-[40px] bg-[#b7c99a] border border-black"></div>
+    <div class="absolute top-[225px] left-[120px] w-[90px] h-[40px] bg-[#b7c99a] border border-black"></div>
+
+
+    <div id="div-contain"  data-img="./canteen.jpeg" data-info="Tea Stall Of NRI" style="background-image: url('/public/map/building2.png'); background-size: cover"
+      class="absolute top-[215px] left-[250px] w-[40px] h-[50px] bg-[#4a4a4a] border-2 border-[#ffeccb] flex shadow-custom-tea items-center justify-center z-[3] text-[6px] font-semibold text-white">
+      Tea hall</div>
+
+    <div id="div-contain"  data-img="./niist-img.jpeg" data-info="Department Of Scholarship For NRI Students" style="background-image: url('/public/map/building2.png'); background-size: cover"
+      class="absolute top-[215px] left-[305px] w-[40px] h-[50px] bg-[#b7c99a] border-2 border-[#ffeccb] flex  shadow-custom-tea items-center justify-center z-[3] text-center text-[6px] font-semibold">
+      Scholarship Department</div>
+      
+    <div id="div-contain" data-img="./canteen.jpeg" data-info="Canteen Of Whole NRI Collage" style="background-image: url('/public/map/building2.png'); background-size: cover"
+      class="absolute top-[215px] left-[355px] w-[40px] h-[50px] bg-[#7a7f7a] border-2 border-[#ffeccb] flex  shadow-custom-tea items-center justify-center z-[3] text-[6px] font-semibold text-white">
+      Canteen</div>
+    <div class="h-[106px] w-[50px] border  rounded-tr-[50px] border-black  absolute top-[264px] left-[400px]"></div>
+    <div class="h-[104px] w-[48px] border rounded-tr-[50px] border-none bg-white absolute top-[266px] left-[400px]">
+    </div>
+
+    <!-- +++++++++++++++++++++ -->
+    <div class="absolute top-[265px] rounded-tr-[50px]  left-[-15px] w-[457px] h-[35px] bg-[#4d4535]"></div>
+
+    <div id="div-contain"  data-img="./NIIST_Building_Img.jpeg" data-info="NRI Institute of Science and Technology " style="background-image: url('/public/map/building.png'); background-size: cover;"
+      class="bg-green-200 absolute top-[300px] z-[3] left-[120px] w-[280px] h-[70px]  border-4 border-[#ffeccb] shadow-custom-niist rounded-tr-[40px] flex items-center justify-center text-[25px] font-[700]">
+      NIIST</div>
+
+    <div id="div-contain" data-img="./NIIST_Building_Img.jpeg" data-info="This Is know as Electrical Department" style="background-image: url('  /public/map/building.png'); background-size: cover"
+      class="absolute  border-4 border-[#ffeccb] top-[366px] left-[120px] w-[85px] h-[150px] z-[3]  flex items-center shadow-custom-niist justify-center text-[12px] font-bold text-center">
+      Electrical <br>
+      department
+    </div>
+
+    <div id="div-contain"  data-img="./NIIST_Building_Img.jpeg" data-info="This Is know as Mechinical Department" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute top-[398px] left-[235px] border-4 border-[#ffeccb] w-[80px] h-[120px] bg-[#f0e6c9] z-[3] flex items-center shadow-custom-niist justify-center text-[10px] font-bold text-center">
+      Mechinical department</div>
+
+    <div id="div-contain"  data-img="./NIIST_Building_Img.jpeg" data-info="This Is know as Law Department" style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute top-[398px] left-[315px] border-4 border-[#ffeccb] w-[80px] h-[120px] bg-[#f0e6c9] z-[3] flex items-center shadow-custom-law justify-center text-[10px] font-bold text-center">
+      Law department</div>
+
+    <div id="div-contain" data-img="./cricket ground.jpeg" data-info="This Is Cricket Ground of NRI Collage" class="absolute top-[534px] left-[120px] w-[117px] h-[190px] bg-[#726f63] text-[12px] font-[700] border-4 border-[#979062] flex items-center justify-center  text-center">
+      Cricket Ground</div>
+
+
+    <div id="div-contain" data-img="./boys-hostel.jpeg" data-info="HOSTEL For Students Of NR" style="background-image: url('/public/map/building2.png'); background-size: cover"
+      class="absolute z-[3] shadow-custom-hostal top-[730px] left-[97px] w-[140px] h-[70px] bg-[#f0e6c9] border-4 border-[#ffeccb] flex items-center justify-center text-[10px] font-bold  mb-20 text-center">
+      HOSTEL</div>
+
+
+
+    <!-- +++++++++++++++++++ -->
+    <div class="w-[80px] h-[34px] absolute top-[390px] rotate-[45deg] left-[422px] bg-[#4d4535]"> </div>
+
+    <div class=" rotate-[-45deg] absolute top-[361px] left-[470px] w-[1px] h-[60px] border border-black "></div>
+    <div class=" rotate-[90deg] absolute top-[379px] left-[410px] w-[1px] h-[40px] border border-[#0f141e] "></div>
+    <div class=" rotate-[-45deg] absolute top-[390px] left-[450px] w-[1px] h-[60px] border border-black "></div>
+    <div class="  absolute top-[410px] left-[760px] w-[1px] h-[250px] border border-black "></div>
+    <div class="  absolute top-[441px] left-[470px] w-[1px] h-[220px] border border-black "></div>
+    <div class="  absolute top-[390px] left-[490px]  ">_________________________________________</div>
+    <div class="  absolute top-[639px] left-[470px]  ">____________________________________________</div>
+
+    <!-- +++++++++++++++++++++ -->
+    <div class="w-[295px] h-[250px] bg-[#4d4535] left-[468px]  absolute top-[410px]">
+    </div>
+
+    <!-- ++++++++++++++++++++ -->
+    <div class="w-[100px] rounded-tr-[50px] h-[130px] absolute top-[265px] bg-[#4d4535] left-[350px]"> </div>
+
+    <div style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute border-4 border-[#ffeccb] shadow-custom-hostal top-[420px] left-[551px] w-[210px] h-[50px] bg-[#f0e6c9] rounded-l-[20px]">
+    </div>
+
+
+    <div class="absolute top-[480px] border-2 border-[#ffeccb] left-[560px] w-[200px] h-[80px] bg-[#c6d3ac] "></div>
+
+
+    <div style="background-image: url('/public/map/building.png'); background-size: cover"
+      class="absolute border-4 border-[#ffeccb] shadow-custom-hostal top-[578px] left-[511px] w-[250px] h-[80px] bg-[#f0e6c9]">
+    </div>
+
+    <button class="fixed top-[570px] right-4 text-[20px] rounded-[15px] p-3 bg-white text-black" onclick="zoomIn()">
+      <i class="ri-add-fill"></i>
+    </button>
+    <button class="fixed top-[630px] right-4 text-[20px] rounded-[15px] p-3 bg-white text-black" onclick="zoomOut()">
+      <i class="ri-subtract-line"></i>
+    </button>
+  </div>
+
+
+  <!-- SideBar -->
+  <div class="side-panel">
+    <div class="panel-header">
+        <h2>Location Details</h2>
+        <button class="close-panel-btn"> <i id="cancel" class="fas fa-times"></i> </button>
+    </div>
+
+    <div class="panel-content">
+        <div class="location-image">
+            <img class="clg-img" src="./NIIST_Building_Img.jpeg"  alt="Location Image">
+        </div>
+
+        <div class="location-info">
+            <h3><i class="fas fa-map-marker-alt"></i> NRI Collage </h3>
+
+            <p class="info-line"><i class="fas fa-info-circle"></i>
+                <span class="collage-info"> NRI Institute of Science and Technology </span>
+            </p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="direction-btn">
+                <i class="fas fa-directions"></i> Get Directions
+            </button>
+            <button class="save-btn">
+                <i class="fas fa-bookmark"></i> Save
+            </button>
+        </div>
+
+
+      </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
