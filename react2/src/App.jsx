@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Routes,
-  Route,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 import gsap from "gsap";
 import About from "./components/About";
@@ -13,18 +8,15 @@ import Department from "./components/Department";
 import MapComponent from "./components/MapComponent";
 import BoxGrid from "./components/BoxGrid";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import MapModal from "./components/MapModal";
+import SearchBoxModal from "./components/SearchBoxModal";
 
 const App = () => {
-  const location = useLocation();
   const [isMapOpen, setIsMapOpen] = useState(false);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+
   const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false);
   const logoRef = useRef(null);
-
-  // Prevent body scroll when fullscreen
-  useEffect(() => {
-    document.body.style.overflow = isFullScreen ? "hidden" : "auto";
-  }, [isFullScreen]);
 
   // Animate modals and buttons
   useEffect(() => {
@@ -54,16 +46,16 @@ const App = () => {
   }, [isMapOpen, isSearchBoxOpen]);
 
   useEffect(() => {
-  if (logoRef.current) {
-    gsap.to(logoRef.current, {
-      y: -10,
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-    });
-  }
-}, []);
+    if (logoRef.current) {
+      gsap.to(logoRef.current, {
+        y: -10,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
 
   // Initial entrance animation
   useEffect(() => {
@@ -92,28 +84,7 @@ const App = () => {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
       {/* Navbar */}
-      <nav className="w-full bg-blue-600 py-4 shadow-xl fixed top-0 z-50 nav-slide">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
-          <div   ref={logoRef} className="text-3xl font-extrabold text-white tracking-wide drop-shadow-md">
-            Kampus see
-          </div>
-          <div className="flex gap-6 text-lg font-medium">
-            {["Home", "About", "Department", "Contact Us"].map((name, index) => (
-              <Link
-                key={index}
-                to={name === "Home" ? "/" : `/${name.toLowerCase()}`}
-                className={`cursor-pointer text-white hover:text-yellow-300 transition-all duration-300 ${
-                  location.pathname === (name === "Home" ? "/" : `/${name.toLowerCase()}`)
-                    ? "border-b-2 border-yellow-300 pb-1"
-                    : ""
-                }`}
-              >
-                {name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Routes */}
       <div className="pt-20 px-4">
@@ -153,49 +124,10 @@ const App = () => {
 
                 {/* Search Box Modal */}
                 {isSearchBoxOpen && (
-                  <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/40 backdrop-blur-sm modal">
-                    <div className={`relative bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-2xl border border-gray-400 overflow-hidden ${
-                      isFullScreen ? "w-full h-full" : "w-3/4 h-3/4 flex flex-col items-center justify-center"
-                    } search-box`}>
-                      <button
-                        className="absolute top-4 right-4 text-white bg-red-500 px-3 py-1 rounded-full text-xl shadow-lg"
-                        onClick={() => setIsSearchBoxOpen(false)}
-                      >
-                        ❌
-                      </button>
-                      <h2 className="text-3xl font-extrabold text-blue-700 mb-4">
-                        Select a Place
-                      </h2>
-                      <BoxGrid />
-                    </div>
-                  </div>
+                  <SearchBoxModal onClose={() => setIsSearchBoxOpen(false)} />
                 )}
 
-                {/* Map Modal */}
-                {isMapOpen && (
-                  <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/40 backdrop-blur-sm modal">
-                    <div className={`relative bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-2xl border border-gray-300 overflow-hidden ${
-                      isFullScreen ? "w-full h-full" : "w-3/4 h-3/4 flex flex-col items-center justify-center"
-                    } map-modal`}>
-                      <button
-                        className="absolute top-4 right-4 text-white  px-3 py-1 rounded-full text-xl map-controls"
-                        onClick={() => setIsMapOpen(false)}
-                      >
-                        ❌
-                      </button>
-                      <h2 className="absolute top-4 left-[42%] text-3xl font-extrabold text-blue-700">
-                        College Map
-                      </h2>
-                      <button
-                        className="absolute top-4 left-4 text-black px-3 py-1 rounded-full text-3xl shadow map-controls"
-                        onClick={() => setIsFullScreen(!isFullScreen)}
-                      >
-                        ⛶
-                      </button>
-                      <MapComponent />
-                    </div>
-                  </div>
-                )}
+                {isMapOpen && <MapModal onClose={() => setIsMapOpen(false)} />}
               </div>
             }
           />
@@ -205,9 +137,7 @@ const App = () => {
           <Route path="/place/:placeName" element={<div>Place Page</div>} />
         </Routes>
       </div>
-
-      {/* Footer */}
-     <Footer />
+      <Footer />
     </div>
   );
 };
